@@ -4,12 +4,8 @@ let numberInput = Number(prompt("Enter the number to be checked: "))
 
 function divBy3or5(num){
     let returnWord = ''
-    if(num % 3 === 0){
-        returnWord += "Fizz"
-    }
-    if(num % 5 === 0){
-        returnWord += "Buzz"
-    }
+    returnWord += (num % 3 === 0) ? "Fizz":""
+    returnWord += (num % 5 === 0) ? "Buzz":""
     if(!returnWord){
         returnWord = "Not divisible by 3 or 5"
     }
