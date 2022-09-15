@@ -2,23 +2,22 @@ const prompt = require('prompt-sync')({sigint: true});
 
 let numberInput = Number(prompt("Enter the number to be checked: "))
 
-function divBy3(num){
+function divBy3or5(num){
+    let returnWord = ''
     if(num % 3 === 0){
-        return "Fizz"
-    }else{
-        return ''
+        returnWord += "Fizz"
     }
-}
-function divBy5(num){
     if(num % 5 === 0){
-        return "Buzz"
-    }else{
-        return ''
+        returnWord += "Buzz"
     }
+    if(!returnWord){
+        returnWord = "Not divisible by 3 or 5"
+    }
+    return returnWord
 }
 
 if(isNaN(numberInput)){
-    console.log("Wrong!")
+    console.log("Error: invalid input")
 }else{
-    console.log(`${divBy3(numberInput)}${divBy5(numberInput)}`)
+    console.log(`${divBy3or5(numberInput)}`)
 }
